@@ -16,19 +16,19 @@ function App() {
 
                     <hr className="mt-4" />
 
-                    <TodoList />
+                    <TodoList completed={false}/>
 
                     <hr className="mt-4" />
 
                     <Footer />
                 </div>
 
-                <div className="w-full max-w-3xl shadow-lg rounded-lg p-6 bg-white mt-5">
+                <div className="w-full max-w-3xl shadow-lg rounded-lg p-6 bg-white my-5">
                     <span>Completed Tasks</span>
 
                     <hr className="mt-4" />
 
-                    <TodoList />
+                    <TodoList completed/>
 
                     <hr className="mt-4" />
                 </div>
