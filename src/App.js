@@ -22,6 +22,16 @@ function App() {
 
                     <Footer />
                 </div>
+
+                <div className="w-full max-w-3xl shadow-lg rounded-lg p-6 bg-white mt-5">
+                    <span>Completed Tasks</span>
+
+                    <hr className="mt-4" />
+
+                    <TodoList />
+
+                    <hr className="mt-4" />
+                </div>
             </div>
         </Provider>
     );
