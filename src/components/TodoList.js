@@ -53,7 +53,7 @@ export default function TodoList({completed}) {
                     todos
                     .filter(filterByCompleted)
                     .map((todo) => (
-                        <Todo todo={todo} key={todo.id} completed/>
+                        <Todo todo={todo} key={todo._id} completed/>
                     ))
                 :
                     todos
@@ -61,7 +61,7 @@ export default function TodoList({completed}) {
                     .filter(filterByColors)
                     .filter(filterByInCompleted)
                     .map((todo) => (
-                        <Todo todo={todo} key={todo.id} completed={false}/>
+                        <Todo todo={todo} key={todo._id} completed={false}/>
                     ))
             }
         </div>

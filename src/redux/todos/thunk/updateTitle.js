@@ -2,8 +2,8 @@ import { editTitle } from "../actions";
 
 const updateTitle = (todoId, text) => {
     return async (dispatch) => {
-        const response = await fetch(`http://localhost:9000/todos/${todoId}`, {
-            method: "PATCH",
+        const response = await fetch(`https://hidden-mountain-72558.herokuapp.com/todos/${todoId}`, {
+            method: "PUT",
             body: JSON.stringify({
                 text: text,
             }),

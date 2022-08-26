@@ -13,7 +13,7 @@ export default function Todo({ todo }) {
 
     const dispatch = useDispatch();
 
-    const { text, id, completed, color } = todo;
+    const { text, _id, completed, color } = todo;
 
     const handleStatusChange = (todoId) => {
         dispatch(updateStatus(todoId, completed));
@@ -53,7 +53,7 @@ export default function Todo({ todo }) {
                 <input
                     type="checkbox"
                     checked={completed}
-                    onChange={() => handleStatusChange(id)}
+                    onChange={() => handleStatusChange(_id)}
                     className="opacity-0 absolute rounded-full"
                 />
                 {completed && (
@@ -69,7 +69,7 @@ export default function Todo({ todo }) {
             {/* Title Input Field And Title Field */}
             {
                 activeInputTitle ?
-                <form className="flex-1" onSubmit={(e) => handleUpdateTitle(e, id, title)}>
+                <form className="flex-1" onSubmit={(e) => handleUpdateTitle(e, _id, title)}>
                     <input
                         type="text"
                         onChange={handleInputTitle}
@@ -92,7 +92,7 @@ export default function Todo({ todo }) {
                         className={`flex-shrink-0 h-4 w-4 rounded-full border-2 ml-auto cursor-pointer hover:bg-green-500 border-green-500 ${
                             color === "green" && "bg-green-500"
                         }`}
-                        onClick={() => handleColorChange(id, "green")}
+                        onClick={() => handleColorChange(_id, "green")}
                     >
                     </div>
 
@@ -100,7 +100,7 @@ export default function Todo({ todo }) {
                         className={`flex-shrink-0 h-4 w-4 rounded-full border-2 ml-auto cursor-pointer hover:bg-yellow-500 border-yellow-500 ${
                             color === "yellow" && "bg-yellow-500"
                         }`}
-                        onClick={() => handleColorChange(id, "yellow")}
+                        onClick={() => handleColorChange(_id, "yellow")}
                     >
                         
                     </div>
@@ -109,7 +109,7 @@ export default function Todo({ todo }) {
                         className={`flex-shrink-0 h-4 w-4 rounded-full border-2 ml-auto cursor-pointer hover:bg-red-500 border-red-500 ${
                             color === "red" && "bg-red-500"
                         }`}
-                        onClick={() => handleColorChange(id, "red")}
+                        onClick={() => handleColorChange(_id, "red")}
                     ></div>
 
                     <img
@@ -123,7 +123,7 @@ export default function Todo({ todo }) {
                         src={cancelImage}
                         className="flex-shrink-0 w-4 h-4 ml-2 cursor-pointer"
                         alt="Cancel"
-                        onClick={() => handleDelete(id)}
+                        onClick={() => handleDelete(_id)}
                     />
                 </>
             }

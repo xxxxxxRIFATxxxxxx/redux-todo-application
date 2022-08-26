@@ -2,10 +2,10 @@ import { colorSelected } from "../actions";
 
 const updateColor = (todoId, color) => {
     return async (dispatch) => {
-        const response = await fetch(`http://localhost:9000/todos/${todoId}`, {
-            method: "PATCH",
+        const response = await fetch(`https://hidden-mountain-72558.herokuapp.com/todos/${todoId}`, {
+            method: "PUT",
             body: JSON.stringify({
-                color: color,
+                color
             }),
             headers: {
                 "Content-type": "application/json; charset=UTF-8",
